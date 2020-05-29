@@ -2,17 +2,106 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Erik Portfolio</title>
+    <link 
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" 
+        rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        rel="stylesheet"/>
     <script src="script.js"></script>
   </head>
   <body>
-    <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
+    <header> 
+        <div class="logo-container">
+            <h4 class="logo"> </h4>
+        </div>
+        <nav>
+
+            <ul class="links">
+                <li ><a class="link" href="#">Home</a></li>
+                <li ><a class="link" href="#section1">About Me</a></li>
+                <li ><a class="link" href="#section2">Resume</a></li>
+
+        </nav>
+    </header>
+
+    <main>
+        <section class="presentation">
+            <div class="intro">
+                <div class="intro-text">
+                    <h1>Erik Mejia Portfolio</h1>
+                    <p>
+                        "You don't have to be great to start, but you have to start to be great." 
+                    </p>
+                    <p class="author">
+                        <i> -Zig Ziglar </i>
+                    </p>
+                </div>
+                <div class="call-to-action">
+
+                </div>
+                </div>
+                <div class="cover">
+                    <img src="./images/mountainPhoto.JPG" alt="Photo of Me" />
+                </div>
+            </div>
+            
+        </section>
+        <div class="social-menu">
+                <ul>
+                    <li><a href="https://github.com/emejia01"><i class="fa fa-github"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/erik-mejia-/"><i class="fa fa-linkedin"></i></a></li>
+                </ul>
+        </div>
+        
+    </main>
+
+    <div class="about-me-content" id=section1> 
+        <br>
+        
+        <h1> About Erik</h1>
+        <br>
+        <center><p class="about-me-text"> 
+            I am currently an undergrad student at Manhattan College in New York City. I was 
+            born and raised in Yonkers, NY, a neighboring city to the Bronx. Although 
+            New York is where I was raised, I’ve always seen myself traveling throughout 
+            the country to experience new places!
+        </p></center>
+        <br>
+        <center><p class="about-me-text">
+            During my time at Manhattan College I was always interested in Engineering, 
+            however it wasn’t until after my freshman year that I considered majoring in 
+            Computer Science. In fact, I was originally a Mechanical Engineering major 
+            before I was introduced to programming. However, when I finally decided to make 
+            the ‘swap’ to Computer Science I had come to find out that I was one of the best 
+            decisions I’d made in my life!
+        </p></center>
+        <br>
+        <center><p class="about-me-text">
+            Currently I am in the middle of completing my undergrad degree in CS with a 
+            concentration in Machine Learning and Intelligence and a Mathematics minor. 
+            Some of my relevant course work includes Data Structures and Algorithms, 
+            Computer Security, Data Mining, Object Oriented Design with Java and Linear 
+            Algebra and Statistics. Aside from school work, I spend a lot of my time 
+            working on personal projects. One of my favorites was a Class Registration Bot 
+            for students at my University. Watching students use it for their own schedules 
+            was especially rewarding.
+        </p></center>
     </div>
+    <br>
+    <br>
+    <div class="resume" id=section2>
+        <h1 class="resume-header"> 
+            Resume
+        </h1>
+    </div>
+    <br>
+    <br>
+    <center><img src="./images/erikResume.jpg" class="resume-image" alt="Resume Image" /></center>
+
+
   </body>
 </html>
+
