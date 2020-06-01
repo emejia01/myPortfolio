@@ -94,7 +94,7 @@ nav {
 .cover img {
     height: 60vh;
     filter: drop-shadow(10px 15px 13px black);
-    animation: drop 1.5s ease;
+    animation: drop 1.2s ease;
     border-radius: 40px 10px 40px 10px;
 }
 
@@ -119,12 +119,14 @@ nav {
     background: linear-gradient(to right, #494964, #6f6f89);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    animation: drop 2.0s ease; /**/
 }
 
 .intro-text p {
     margin-top: 5px;
     font-size: 23px;
     color: #585772;
+    animation: drop 3.0s ease;
 }
 
 .author {
@@ -161,7 +163,7 @@ nav {
 .social-menu ul li a {
     position: relative;
     display: block;
-    width: 50px;
+    width: 65px;
     height: 50px;
     border-radius: 50%;
     background-color: white;
@@ -211,10 +213,53 @@ nav {
 
 }
 
+
+
+/* Carousel CSS Start here! */
+
+
+/* Carousel CSS End here! */
+
+
+
+
+/* Add Sytle for 'Personal Project' content */
+.project {
+    width: 800px;
+    padding: 20px;
+}
+
+.project img {
+    margin-right: 15px;
+    float: left;
+    filter: drop-shadow(10px 10px 10px black);
+    border-radius: 15px 15px 15px 15px;
+}
+
+.personal-projects h1 {
+    font-size: 46px;
+    font-weight: 600;
+    background: linear-gradient(to right, #494964, #6f6f89);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.project h3, .project p {
+    margin-left: 15px;
+    display: block;
+    color: #585772;
+
+}
+
+.project p {
+    color: #000000;
+}
+
+
 /* Add Style for 'Resume' content */
 .resume {
     margin: auto;
-
+    background-color: #f9f9f9;
 }
 .resume h1 {
     text-align: center;

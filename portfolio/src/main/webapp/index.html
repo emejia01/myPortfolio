@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Erik Portfolio</title>
+
     <link 
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" 
         rel="stylesheet"/>
@@ -11,6 +12,11 @@
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         rel="stylesheet"/>
     <script src="script.js"></script>
+
+    <!-- -->
+    
+
+
   </head>
   <body>
     <header> 
@@ -22,7 +28,8 @@
             <ul class="links">
                 <li ><a class="link" href="#">Home</a></li>
                 <li ><a class="link" href="#section1">About Me</a></li>
-                <li ><a class="link" href="#section2">Resume</a></li>
+                <li ><a class="link" href="#section2">Personal Projects</a></li>
+                <li ><a class="link" href="#section3">Resume</a></li>
 
         </nav>
     </header>
@@ -32,9 +39,9 @@
             <div class="intro">
                 <div class="intro-text">
                     <h1>Erik Mejia Portfolio</h1>
-                    <p>
+                    <i><strong><p>
                         "You don't have to be great to start, but you have to start to be great." 
-                    </p>
+                    </p></strong></i>
                     <p class="author">
                         <i> -Zig Ziglar </i>
                     </p>
@@ -92,15 +99,86 @@
     </div>
     <br>
     <br>
-    <div class="resume" id=section2>
+
+
+
+
+
+
+
+
+    <!-- Carousel start here! -->
+ 
+    <!-- Carousel End here! -->
+
+    <center>
+    <div class="personal-projects" id=section2> 
+        <br>
+        <h1> Personal Projects </h1>
+        <br>
+        <div class="project"> 
+            <a href="https://github.com/emejia01/News-Scraper-and-Sentiment-Analyzer" target="_blank"> <img src="./images/codingImage.png" alt="Code" width="450px"> </a>
+            <h3> News Scraper and Sentiment Analyzer</h3>
+            <p> This is a console-based Python program that is able to extract the textual data from the URL of 
+                a news article webpage <strong> (Currently works with CNN, MSNBC/NBC News, The Washington Post, and Fox News )</strong>. 
+                After extracting the data, the text is then analyzed against a list of positive and negative sentiment 
+                words to determine whether the narrative of the article is positive or negative.
+            </p>
+        </div>
+    
+    </center>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <center> 
+        <div class="project"> 
+            <a href="https://github.com/emejia01/Manhattan-College-Class-Registration-Automation" target="_blank"> <img src="./images/autoreg_image.png" alt="AutoReg Screenshot" width="450px"> </a>
+            <h3> Manhattan-College-Class-Registration-Automator </h3>
+            <p> AutoReg is a python GUI based program that allows Manhattan College students to register for their 
+                desired courses as soon as the registration portal time opens. This program automates the registration 
+                process so that actual registration time happens in milliseconds, increasing the probability of 
+                successfully registering for all your desired classes.
+            </p>
+        </div>
+    </center>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br><br>
+    <center> 
+        <div class="project"> 
+            <img src="./images/automate_image.jpg" alt="Auto-Mate Mock-up" height="400px">
+            <h3> Auto-Mate Registration Tool: Chrome Extension</h3>
+            <p> COMMING SOON! Auto-Mate.io is a Chrome Browser Extension and is a continuation of my
+                <strong> <a href="https://github.com/emejia01/Manhattan-College-Class-Registration-Automation" target="_blank"> AutoReg</a> </strong>
+                project. This extension will provide an easy access tool for Manhattan College students to automate the class registration
+                process. With Auto-mate, students would only need to provide their Manhattan College student credentials and the applicable Course Registration Number
+                of that the program and attempt registration.
+            </p>
+        </div>
+    </center>
+
+    </div> <br><br><br><br><br><br>
+
+
+    <div class="resume" id=section3>
+        <br><br><br>
         <h1 class="resume-header"> 
             Resume
         </h1>
-    </div>
+    
     <br>
     <br>
     <center><img src="./images/erikResume.jpg" class="resume-image" alt="Resume Image" /></center>
-
+    </div>
+    <br><br><br>
 
   </body>
 </html>
