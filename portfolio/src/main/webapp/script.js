@@ -29,6 +29,14 @@ function addRandomGreeting() {
 
 async function getServletContent() {
   const response = await fetch('/data');
-  const quote = await response.text();
+  const quote = await response.json();
   document.getElementById('content-container').innerText = quote;
+  console.log(quote);
+}
+
+// Create list element for comment
+function createListElement(text) {
+  const liElement = document.createElement('li');
+  liElement.innerText = text;
+  return liElement;
 }

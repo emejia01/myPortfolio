@@ -19,14 +19,52 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+// add imports
+import java.util.ArrayList;
+import com.google.gson.Gson;
 
 /** Servlet that returns some example content. TODO: modify this file to handle comments data */
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
+    ArrayList<String> messages = new ArrayList<String>();// {
+    //    {
+    //        add("Hello");
+    //       add("How are you doing?");
+    //        add("Welcome!");
+    //    }
+    //};
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
     response.setContentType("text/html;");
-    response.getWriter().println("<h1>Hello Erik!</h1>");
+    //response.getWriter().println("<h1>Hello Erik!</h1>");
+
+    //messages.add("hello");
+    //messages.add("Erik");
+    //messages.add("New York");
+
+    Gson gson = new Gson();
+    String jsonString = gson.toJson(messages);
+    response.getWriter().println(jsonString);
+
+    
+  }
+
+    @Override
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String comment_text = getParameter(request, "text-input", "");
+
+        response.setContentType("text/html;");
+        response.getWriter().println(comment_text);
+        messages.add(comment_text);
+    }
+
+  private String getParameter(HttpServletRequest request, String name, String defaultValue) {
+    String value = request.getParameter(name);
+    if (value == null) {
+      return defaultValue;
+    }
+    return value;
   }
 }
