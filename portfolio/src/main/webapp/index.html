@@ -177,11 +177,14 @@
 
     <center>
     <div id="comment-content" style="height:300px;">
-        <center> <h1>Comments</h1> </center>
+        <center> <h1>Leave me a Comment</h1> </center>
         <!-- <button onclick="getServletContent()">Click Me!</button> 
         <center> <div id="content-container"> </div></center> -->
 
         <form action="/data" method="POST">
+        
+        <label for="fname">Name:</label>
+        <center><input type="text" id="fname" name="fname"> </center> <br>
         <textarea name="text-input" placeholder="Let me know what you think and drop a line :) !"> </textarea> 
         <br>
         <input type="submit" /> 
