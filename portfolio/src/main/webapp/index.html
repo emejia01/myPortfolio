@@ -178,8 +178,6 @@
     <center>
     <div id="comment-content" style="height:300px;">
         <center> <h1>Leave me a Comment</h1> </center>
-        <!-- <button onclick="getServletContent()">Click Me!</button> 
-        <center> <div id="content-container"> </div></center> -->
 
         <form action="/data" method="POST">
         
@@ -187,10 +185,20 @@
         <center><input type="text" id="fname" name="fname"> </center> <br>
         <textarea name="text-input" placeholder="Let me know what you think and drop a line :) !"> </textarea> 
         <br>
-        <input type="submit" /> 
-        <center> <div id="content-container"> </div></center>
+          
 
+        <input type="submit" /> 
+        <br>
+        <center> <ul id="content-container"> </ul></center>
         </form>
+                <label for="lang">Choose a Language to Translate Comments To:</label>
+            <select name="lang" id="lang">
+                <option value="en">English</option>
+                <option value="es">Spanish</option>
+                <option value="fr">French</option>
+                <option value="hi">Hindi</option>
+            </select>
+            <button onclick="getServletContent()">Translate!</button>
 
     </div>
     </center>
