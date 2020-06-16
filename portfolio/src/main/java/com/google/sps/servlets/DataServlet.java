@@ -34,6 +34,13 @@ import com.google.appengine.api.datastore.PreparedQuery;
 import com.google.appengine.api.datastore.Query;
 import com.google.appengine.api.datastore.Query.SortDirection;
 import com.google.appengine.api.datastore.FetchOptions;
+// User API
+import com.google.appengine.api.users.UserService;
+import com.google.appengine.api.users.UserServiceFactory;
+// Translate API
+import com.google.cloud.translate.Translate;
+import com.google.cloud.translate.TranslateOptions;
+import com.google.cloud.translate.Translation;
 
 
 
@@ -45,6 +52,10 @@ public class DataServlet extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        // Determine language code from JS 
+        String language = request.getQueryString().split("=")[1];
+        Translate translate = TranslateOptions.getDefaultInstance().getService();
 
         // Query DataStore for all comments
         Query query = new Query("Comment").addSort("timestamp", SortDirection.DESCENDING);
@@ -58,13 +69,17 @@ public class DataServlet extends HttpServlet {
             String date = (String) entity.getProperty("date");
             String comment_text = (String) entity.getProperty("text");
 
+            // Translate comment to respective language from language code
+            Translation translation = translate.translate(comment_text, Translate.TranslateOption.targetLanguage(language));
+            comment_text = translation.getTranslatedText();
+
             comments.add(new Comment(user_name, comment_text, date));
         }
         
         Gson gson = new Gson();
         String jsonString = gson.toJson(comments);
 
-        response.setContentType("application/json;");
+        response.setContentType("application/json; charset=UTF-8");
         response.getWriter().println(jsonString);
 
     }
@@ -72,6 +87,8 @@ public class DataServlet extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        // Retrieve comment and username from HTML entry form
         String comment_text = getParameter(request, "text-input", "");
         String user_name = getParameter(request, "fname", "");
 
@@ -107,6 +124,5 @@ public class DataServlet extends HttpServlet {
         }
         return value;
     }
-
 
 }
