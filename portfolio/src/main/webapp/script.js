@@ -27,12 +27,28 @@ function addRandomGreeting() {
   greetingContainer.innerText = greeting;
 }
 
+
 async function getServletContent() {
-  const response = await fetch('/data');
-  const quote = await response.json();
-  document.getElementById('content-container').innerText = quote;
-  console.log(quote);
-}
+  const languageCode = document.getElementById("lang").value;
+  const params = new URLSearchParams();
+  params.append("lang", languageCode);
+
+  const response = await fetch('/data?' + params.toString());
+  const commentsJson = await response.json();
+
+  const commentList = document.getElementById('content-container');
+  commentList.innerHTML = "";
+  
+  // Create and display each comment in a list item
+  commentsJson.forEach(function (item) {
+      const commentText = item.comment_text;
+      const userName = item.user_name;
+      const date = item.date;
+
+      commentList.appendChild(createListElement("Date: " + date + "      Username: " + userName + "      Comment: " + commentText));
+  }) 
+} 
+
 
 // Create list element for comment
 function createListElement(text) {
